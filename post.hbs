@@ -113,28 +113,31 @@ into the {body} of the default.hbs template --}}
             {{> subscribe-form}}
             {{/if}}
             <section class="share-on">
-                <span>{{t "Share on:"}}</span>
+                <img title="Share on social media" alt="share on social media"
+                    src="https://cdn.xalitech.com/images/social/share-32x32.png">
+                &nbsp;
                 <a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
                     onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;"
-                    title="{{t "Share on Facebook"}}">
+                    title='Share on Facebook: {{title}}'>
                     <img alt="facebook" src="https://cdn.xalitech.com/images/social/facebook-32x32.png">
                 </a>
                 <a class="share-twitter"
                     href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;"
-                    title="{{t "Share on Twitter"}}">
+                    title='Share on Twitter: {{title}}'>
                     <img alt="twitter" src="https://cdn.xalitech.com/images/social/twitter-32x32.png">
                 </a>
-                <a href="https://www.linkedin.com/shareArticle?mini=true&amp;title={{encode title}}&amp;url={{url absolute="true"}}"
+                <a title='Share on LinkedIn: {{title}}'
+                    href="https://www.linkedin.com/shareArticle?mini=true&amp;title={{encode title}}&amp;url={{url absolute="true"}}"
                     onclick="window.open(this.href, 'share-linkedin', 'width=550,height=235');return false;">
                     <img alt="linkedin" src="https://cdn.xalitech.com/images/social/linkedin-32x32.png">
                 </a>
                 <a href="https://www.reddit.com/submit?url={{url absolute="true"}}%2F&title={{encode title}}"
-                    title="{{t "Share on Reddit"}}">
+                    title='Share on Reddit: {{title}}'>
                     <img alt="reddit" src="https://cdn.xalitech.com/images/social/reddit-32x32.png">
                 </a>
                 <a href="mailto:?subject={{encode title}}&amp;body={{url absolute="true"}}"
-                    title="{{t "Share by Email"}}">
+                    title='Share by Email: {{title}}'>
                     <img alt="email" src="https://cdn.xalitech.com/images/social/email-32x32.png">
                 </a>
             </section>
