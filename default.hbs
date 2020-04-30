@@ -86,11 +86,6 @@
     </div>
     {{/if}}
 
-    {{!-- jQuery, required for fitvids --}}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
-        </script>
-    {{!-- Fitvids (for responsive video embeds), infinite scroll, floating header, and gallery card support --}}
     <script src="{{asset "built/casper.js"}}"></script>
 
     {{!-- Scripts for Members subscription --}}
@@ -108,22 +103,25 @@
 
         // Give the parameter a variable name
         var action = getParameterByName('action');
+        window.addEventListener('DOMContentLoaded', (event) => {
 
-        $(document).ready(function () {
             if (action == 'subscribe') {
-                $('body').addClass("subscribe-success");
+                document.getElementsByTagName("body")[0].classList.add("subscribe-success")
+            }
+            var items = document.getElementsByClassName('.subscribe-success-message .subscribe-close');
+            for (let i = 0; i < items.length; i++) {
+                items[0].addEventListener("click", function () {
+                    document.getElementsByClassName('.subscribe-success-message')[0].classList.add('close');
+                })
             }
 
-            $('.subscribe-success-message .subscribe-close').click(function () {
-                $('.subscribe-success-message').addClass('close');
-            });
-
-            // Reset form on opening subscrion overlay
-            $('.subscribe-button').click(function () {
-                $('.subscribe-overlay form').removeClass();
-                $('.subscribe-email').val('');
+            let button = document.getElementsByClassName('.subscribe-button')[0];
+            button && button.addEventListener("click", function () {
+                document.getElementsByClassName('.subscribe-overlay form')[0].classList.remove('subscribe-overlay');
+                document.getElementsByClassName('.subscribe-email')[0].nodeValue = '';
             });
         });
+
     </script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
