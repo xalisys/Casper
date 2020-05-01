@@ -3101,3 +3101,57 @@ Usage (In Ghost editor):
         color: color(var(--green) l(+5%) s(-5%));
     }
 }
+
+/* Start Custom CSS */
+/* Use Source Sans Pro font */
+.post-full-content,
+.post-full-content h5,
+.post-card-excerpt,
+.site-header-content .author-meta,
+.subscribe-overlay-description,
+.post-card-content,
+.post-card-content-link,
+.post-card-header,
+.post-card-primary-tag,
+.post-card-title,
+.post-card,
+.post-card-image-link,
+.site-nav,
+.site-header-content,
+footer {
+    font-family: "Source Sans Pro", sans-serif, Georgia;
+}
+
+/* Use GitLab-like font for code blocks instead of ugly monospace */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: "Menlo", "DejaVu Sans Mono", "Liberation Mono", "Consolas",
+        "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+}
+
+/* Share links at end of post */
+.share-on {
+    display: flex;
+    justify-content: center;
+}
+
+.share-on > div {
+    padding-left: 10px;
+}
+
+.share-on a,
+.share-on a:hover {
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.share-icon {
+    padding: 0px;
+    margin: 0px;
+}
+.post-full-comments {
+    text-align: center;
+}
