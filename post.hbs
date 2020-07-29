@@ -91,8 +91,6 @@ into the {body} of the default.hbs template --}}
 
             {{#if feature_image}}
             <figure class="post-full-image">
-                {{!-- This is a responsive image, it loads different sizes depending on device
-                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img srcset="{{img_url feature_image size="s"}} 300w,
                             {{img_url feature_image size="m"}} 600w,
                             {{img_url feature_image size="l"}} 1000w,
@@ -156,10 +154,6 @@ into the {body} of the default.hbs template --}}
 
 
             <section class="post-full-comments">
-                <a href="https://www.buymeacoffee.com/2FHvWxa" rel="noreferrer" target="_blank"><img
-                        src="https://cdn.buymeacoffee.com/buttons/lato-blue.png" alt="Buy Me A Coffee"
-                        style="height: 51px !important;width: 217px !important;"></a>
-                {{!-- <div class="fb-comments" data-href="{{url absolute="true"}}" data-numposts="10"></div> --}}
 
             </section>
 
